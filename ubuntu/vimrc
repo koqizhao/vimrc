@@ -131,6 +131,8 @@ set foldcolumn=3
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 autocmd FileType php map <F9> <ESC>@=((foldclosed(line('.')) < 0) ? 'zM' : 'zR')<CR>
 
+set nofoldenable
+
 set sm "显示括号配对情况
 
 "Auto Complete opt
