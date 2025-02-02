@@ -1,4 +1,54 @@
 
+"------------------------- Vundle Start ------------------------------"
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'vim-scripts/AutoComplPop'
+
+Plugin 'ervandew/supertab'
+
+"snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+Plugin 'tpope/vim-surround'
+
+Plugin 'tpope/vim-markdown'
+
+Plugin 'tomasr/molokai'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"------------------------- Vundle End ------------------------------"
+
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/gvimrc_example.vim
 
@@ -12,44 +62,44 @@ set autochdir
 "Auto change to editing file's cwd
 autocmd BufEnter * cd %:p:h
 
-"²»Ê¹ÓÃ±¸·ÝÎÄ¼þ
+"ï¿½ï¿½Ê¹ï¿½Ã±ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 set nobackup
-"²»Éú³ÉswapÎÄ¼þ£¬µ±buffuer±»¶ªÆúÊ±Òþ²ØËü
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½swapï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½buffuerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 set noswapfile
 set bufhidden=hide
 
 set guioptions-=b
 set guioptions-=r
 set guioptions-=l
-"set guioptions-=m   "Òþ²Ø²Ëµ¥
-set guioptions-=T   "Òþ²Ø¹¤¾ßÀ¸
+"set guioptions-=m   "ï¿½ï¿½ï¿½Ø²Ëµï¿½
+set guioptions-=T   "ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½ï¿½
 set guioptions=m
 
-"ÉèÖÃ´°¿Ú´óÐ¡ºÍ³õÊ¼Î»ÖÃ
+"ï¿½ï¿½ï¿½Ã´ï¿½ï¿½Ú´ï¿½Ð¡ï¿½Í³ï¿½Ê¼Î»ï¿½ï¿½
 set lines=35
 set columns=120
 winpos 400 100
-"ÉèÖÃÃüÁîÐÐµÄ¸ß¶È
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¸ß¶ï¿½
 set cmdheight=1
 
-"ÔØÈëÎÄ¼þÀàÐÍ²å¼þ
+"ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½
 filetype plugin on
-"ÎªÌØ¶¨ÀàÐÍÎÄ¼þÔØÈëËõ½øÎÄ¼þ
+"Îªï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 filetype indent on
 
 highlight StatusLine guifg=SlateBlue guibg=Yellow
 highlight StatusLineNC guifg=Gray guibg=White
 
-"×Ô¶¯¸ñÊ½»¯
+"ï¿½Ô¶ï¿½ï¿½ï¿½Ê½ï¿½ï¿½
 set formatoptions=tcrqn
-"¼Ì³ÐÇ°Ò»ÐÐµÄËõ½ø·½Ê½×Ô¶¯Ëõ½ø
+"ï¿½Ì³ï¿½Ç°Ò»ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½
 set autoindent
-"Ê¹ÓÃc·ç¸ñµÄËõ½ø
+"Ê¹ï¿½ï¿½cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 set cindent
-"Îªc³ÌÐòÌá¹©×Ô¶¯Ëõ½ø
+"Îªcï¿½ï¿½ï¿½ï¿½ï¿½á¹©ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½
 set smartindent
 
-"²»×Ô¶¯»»ÐÐ
+"ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½
 set nowrap
 autocmd BufRead,BufNewFile *.txt set wrap
 autocmd BufRead,BufNewFile *.note set wrap
@@ -57,83 +107,83 @@ autocmd BufRead,BufNewFile *.note set wrap
 " txtBrowser
 au BufEnter *.txt setlocal ft=txt
 
-"ÈÃÌØË×´Ê»ã²»×ö±êµã·ûºÅ´¦Àí£¨²»»»ÐÐ£©
+"ï¿½ï¿½ï¿½ï¿½ï¿½×´Ê»ã²»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½
 set iskeyword+=_,$,@,%,#,-
 
-"Ê×ÐÐËõ½ø1¸ötab
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½tab
 set smarttab
 
-"tabÎª4¸ö¿Õ¸ñ³¤
+"tabÎª4ï¿½ï¿½ï¿½Õ¸ï¿½
 set tabstop=4
-"Í³Ò»Ëõ½øÎª4¸ö¿Õ¸ñ³¤
+"Í³Ò»ï¿½ï¿½ï¿½ï¿½Îª4ï¿½ï¿½ï¿½Õ¸ï¿½
 set softtabstop=4
 set shiftwidth=4
-"tab×ª»»Îª¿Õ¸ñ
+"tab×ªï¿½ï¿½Îªï¿½Õ¸ï¿½
 set expandtab
 
-"Óï·¨¸ßÁÁ
+"ï¿½ï·¨ï¿½ï¿½ï¿½ï¿½
 syntax on
 
-"ÐÐ¾à£¬µ¥Î»ÎªÏñËØ
+"ï¿½Ð¾à£¬ï¿½ï¿½Î»Îªï¿½ï¿½ï¿½ï¿½
 set linespace=1
 
-"ÏÔÊ¾ÐÐºÅ
+"ï¿½ï¿½Ê¾ï¿½Ðºï¿½
 set number
 
-"¸ßÁÁÏÔÊ¾Æ¥ÅäµÄÀ¨ºÅ
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 set showmatch
-"Æ¥ÅäÀ¨ºÅ¸ßÁÁµÄÊ±¼ä£¬µ¥Î»Îª1/10s
+"Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½Î»Îª1/10s
 set matchtime=5
-"ËÑË÷Ê±ºöÂÔ´óÐ¡Ð´
+"ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ô´ï¿½Ð¡Ð´
 set ignorecase
-"²»¸ßÁÁ±»ËÑË÷µÄ¾ä×Ó
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½
 set nohlsearch
 
-"µ±¹â±ê¾àÀë´°¿Ú¶¥¡¢µ×²¿8ÐÐÊ±×Ô¶¯ÏòÏÂÒÆ¶¯
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë´°ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½×²ï¿½8ï¿½ï¿½Ê±ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 set scrolloff=5
 
-"²»Ê¹ÓÃvi¼üÅÌÄ£Ê½£¬Ê¹ÓÃvimÄ£Ê½
+"ï¿½ï¿½Ê¹ï¿½ï¿½viï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½Ê¹ï¿½ï¿½vimÄ£Ê½
 set nocompatible
 
-"¸ßÁÁµ±Ç°ÐÐ
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½
 "set cursorline
 
-"¸ßÁÁËÑË÷
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 set hlsearch
 
-"ÏÔÊ¾ÊäÈëµÄÃüÁî
+"ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 set showcmd
 
-"Éè¶¨ÎÄ×Ö±àÂë
+"ï¿½è¶¨ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½
 "set encoding=utf-8
 set fenc=utf-8
 set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
 
-"ÔÚ´¦ÀíÎ´±£´æ»òÖ»¶ÁÎÄ¼þÊ±£¬µ¯³öÈ·ÈÏ¿ò
+"ï¿½Ú´ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½Ä¼ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï¿ï¿½
 set confirm
 
-"historyÎÄ¼þÐèÒª¼ÇÂ¼µÄÐÐÊý
+"historyï¿½Ä¼ï¿½ï¿½ï¿½Òªï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 set history=100
 
-"Æô¶¯Ê±²»ÏÔÊ¾ÌáÊ¾
+"ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê¾
 set shortmess=atl
 
-"²»ÉÁË¸
+"ï¿½ï¿½ï¿½ï¿½Ë¸
 set novisualbell
 
 set foldenable
 set fdls=1
-"ÉèÖÃÓï·¨ÕÛµþ
+"ï¿½ï¿½ï¿½ï¿½ï¿½ï·¨ï¿½Ûµï¿½
 set foldmethod=syntax
-"ÉèÖÃÕÛµþÇøÓò¿í¶È
+"ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 set foldcolumn=3
-"ÓÃ¿Õ¸ñÀ´¿ª¹ØÕÛµþ
+"ï¿½Ã¿Õ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 autocmd FileType php map <F9> <ESC>@=((foldclosed(line('.')) < 0) ? 'zM' : 'zR')<CR>
 
 set nofoldenable
 
-set sm "ÏÔÊ¾À¨ºÅÅä¶ÔÇé¿ö
+set sm "ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 "Auto Complete opt
 "set completeopt=longest,menuone
@@ -187,56 +237,6 @@ vmap <C-v> c<ESC>"+p
 imap <C-v> <C-r><C-o>+
 nmap <C-v> "+p
 
-"------------------------- Vundle Start ------------------------------"
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/*
-
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'scrooloose/nerdtree'
-
-Plugin 'tpope/vim-fugitive'
-
-Plugin 'vim-scripts/AutoComplPop'
-Plugin 'ervandew/supertab'
-
-" snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-markdown'
-
-Plugin 'tomasr/molokai'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-"------------------------- Vundle End ------------------------------"
-
-
 "NERD Tree
 let NERDTreeChDirMode=2
 au VimEnter * NERDTree "auto open
@@ -254,5 +254,3 @@ autocmd FileType php let g:acp_behaviorKeywordLength = 2
 
 "molokai
 colorscheme molokai
-
-
